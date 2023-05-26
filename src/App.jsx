@@ -9,6 +9,9 @@ import UserContext from "./contexts/UserContext";
 
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
+import HomePage from "./pages/HomePage";
+import FollowersPage from "./pages/FollowersPage";
+import FollowingPage from "./pages/FollowingPage";
 
 export default function App() {
   const [user, setUser] = useState({});
@@ -19,6 +22,9 @@ export default function App() {
           <Routes>
             <Route path="/" element={<SignInPage />} />
             <Route path="/cadastro" element={<SignUpPage />} />
+            <Route path="/feed" element = {<HomePage />} />
+            <Route path="/seguidores" element = {<FollowersPage />} />
+            <Route path="/seguindo" element = {<FollowingPage />} />
           </Routes>
         </UserContext.Provider>
       </BrowserRouter>

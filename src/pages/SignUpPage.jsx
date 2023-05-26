@@ -1,12 +1,22 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import UserContext from "../contexts/UserContext";
 
 export default function SignUpPage() {
   const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
   });
+
+  const [user, setUser] = useContext(UserContext);
+
+  useEffect(() => {
+    if (localStorage.getItem("user") !== null) {
+      setUser(JSON.parse(localStorage.getItem("user")));
+      navigate("/feed");
+    }
+  }, []);
 
   const navigate = useNavigate();
 

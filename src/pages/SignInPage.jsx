@@ -8,7 +8,7 @@ export default function SignInPage() {
   useEffect(() => {
     if (localStorage.getItem("user") !== null) {
       setUser(JSON.parse(localStorage.getItem("user")));
-      navigate("/home");
+      navigate("/feed");
     }
   }, []);
 
