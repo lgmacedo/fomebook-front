@@ -54,7 +54,8 @@ export default function HomePage() {
             </Post>
         ))}
       </PostsContainer>
-      <button>NEW POST</button>
+      <button><Link to="/novo">NEW POST</Link></button>
+      <button><Link to="/buscar">BUSCAR</Link></button>
     </FeedContainer>
   );
 }
