@@ -14,6 +14,7 @@ import FollowersPage from "./pages/FollowersPage";
 import FollowingPage from "./pages/FollowingPage";
 import NewPostPage from "./pages/NewPostPage";
 import SearchPage from "./pages/SearchPage";
+import UserPage from "./pages/UserPage";
 
 export default function App() {
   const [user, setUser] = useState({});
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/seguindo" element = {<FollowingPage />} />
             <Route path="/novo" element = {<NewPostPage />} />
             <Route path="/buscar" element = {<SearchPage />} />
+            <Route path="/perfil/:idPerfil" element = {<UserPage />} />
           </Routes>
         </UserContext.Provider>
       </BrowserRouter>
