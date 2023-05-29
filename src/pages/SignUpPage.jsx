@@ -88,13 +88,14 @@ export default function SignUpPage() {
           onChange={(e) => handleChange(e)}
           placeholder="Foto de perfil"
         />
-        <input
+        <textarea
           required
           type="text"
           name="bio"
           value={form.bio}
           onChange={(e) => handleChange(e)}
-          placeholder="Biografia"
+          placeholder="Biografia (até 200 caracteres)"
+          maxLength="200"
         />
         <input
           placeholder="Senha"
@@ -147,6 +148,17 @@ const SignUpContainer = styled.section`
     outline-style: none;
     border: none;
   }
+  textarea{
+    width: 400px;
+    height: 100px;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    outline-style: none;
+    border: none;
+    padding-top: 10px;
+  }
   a {
     margin-top: 20px;
     text-decoration: none;
@@ -164,5 +176,18 @@ const SignUpContainer = styled.section`
     border: none;
     border-radius: 5px;
     color: grey;
+  }
+  @media (max-width: 420px) {
+    padding-top: 0px;
+    h1{
+      font-size: 40px;
+    }
+    form{
+      margin-top: 20px;
+    }
+    input, button, textarea{
+      width: 93vw;
+      font-size: 15px;
+    }
   }
 `;

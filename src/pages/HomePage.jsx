@@ -88,8 +88,8 @@ const Home = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 `;
 
 const FeedContainer = styled.div`
@@ -107,7 +107,7 @@ const ProfileContainer = styled.div`
   background-color: white;
   height: 175px;
   width: 50vw;
-  margin-top: 25px;
+  margin-top: 15px;
   margin-bottom: 35px;
   column-gap: 25px;
   img {
@@ -117,6 +117,16 @@ const ProfileContainer = styled.div`
   }
   font-weight: 300;
   border-radius: 5px;
+  @media (max-width: 420px) {
+    width: 93vw;
+    padding-left: 10px;
+    height: 125px;
+    column-gap: 10px;
+    img{
+      height: 100px;
+      width: 100px;
+    }
+  }
 `;
 
 const ProfileData = styled.div`
@@ -137,11 +147,22 @@ const ProfileData = styled.div`
     outline-style: none;
     text-decoration: none;
   }
+  @media (max-width: 420px) {
+    p:nth-child(1) {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  p:nth-child(2) {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  }
 `;
 
 const ProfileButtons = styled.div`
   display: flex;
-  column-gap: 10px;
+  column-gap: 5px;
   a {
     outline-style: none;
     text-decoration: none;
@@ -150,6 +171,12 @@ const ProfileButtons = styled.div`
   button {
     height: 28px;
     font-size: 15px;
+  }
+  @media (max-width: 420px) {
+    button{
+      height: 20px;
+      font-size: 10px;
+    }
   }
 `;
 
@@ -172,22 +199,41 @@ const Post = styled.div`
   }
   border-radius: 5px;
   font-size: 20px;
+  @media (max-width: 420px) {
+    width: 93vw;
+    font-size: 15px;
+  }
 `;
 
 const PostData = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   font-size: 20px;
+  @media (max-width: 420px) {
+    font-size: 10px;
+    padding: 8px;
+  }
 `;
 
 const PostLikes = styled.div`
   display: flex;
+  align-items: center;
   svg {
     margin-right: 10px;
+  }
+  @media (max-width: 420px) {
+    svg{
+      margin-right: 5px;
+      font-size: 18px;
+    }
   }
 `;
 
 const PostDescription = styled.p`
   padding: 15px;
+  @media (max-width: 420px) {
+    padding: 10px;
+  }
 `;

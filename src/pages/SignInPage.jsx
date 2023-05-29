@@ -119,4 +119,17 @@ const SignInContainer = styled.section`
     border-radius: 5px;
     color: grey;
   }
+  @media (max-width: 420px) {
+    padding-top: 120px;
+    h1{
+      font-size: 40px;
+    }
+    form{
+      margin-top: 20px;
+    }
+    input, button{
+      width: 93vw;
+      font-size: 15px;
+    }
+  }
 `;

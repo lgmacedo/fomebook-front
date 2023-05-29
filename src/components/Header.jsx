@@ -36,6 +36,17 @@ const HeaderContainer = styled.div`
     color: white;
     margin-left: 20px;
   }
+  @media (max-width: 420px) {
+    width: 93vw;
+    h1 {
+      font-size: 30px;
+    }
+    svg {
+      font-size: 30px;
+      color: white;
+      margin-left: 20px;
+    }
+  }
 `;
 
 const Buttons = styled.div``;

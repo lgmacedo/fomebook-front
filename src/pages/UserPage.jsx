@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import UserContext from "../contexts/UserContext";
@@ -123,6 +123,16 @@ const ProfileContainer = styled.div`
   }
   font-weight: 300;
   border-radius: 5px;
+  @media (max-width: 420px) {
+    width: 93vw;
+    padding-left: 10px;
+    height: 125px;
+    column-gap: 10px;
+    img{
+      height: 100px;
+      width: 100px;
+    }
+  }
 `;
 
 const ProfileData = styled.div`
@@ -143,6 +153,17 @@ const ProfileData = styled.div`
     outline-style: none;
     text-decoration: none;
   }
+  @media (max-width: 420px) {
+    p:nth-child(1) {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  p:nth-child(2) {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  }
 `;
 
 const ProfileButtons = styled.div`
@@ -157,6 +178,12 @@ const ProfileButtons = styled.div`
     height: 28px;
     font-size: 15px;
     cursor: pointer;
+  }
+  @media (max-width: 420px) {
+    button{
+      height: 20px;
+      font-size: 10px;
+    }
   }
 `;
 
@@ -179,6 +206,10 @@ const Post = styled.div`
   }
   border-radius: 5px;
   font-size: 20px;
+  @media (max-width: 420px) {
+    width: 93vw;
+    font-size: 15px;
+  }
 `;
 
 const PostData = styled.div`
@@ -186,16 +217,31 @@ const PostData = styled.div`
   justify-content: space-between;
   padding: 10px;
   font-size: 20px;
+  align-items: center;
+  @media (max-width: 420px) {
+    font-size: 10px;
+    padding: 8px;
+  }
 `;
 
 const PostLikes = styled.div`
   display: flex;
+  align-items: center;
   svg {
     margin-right: 10px;
   }
   cursor: pointer;
+  @media (max-width: 420px) {
+    svg{
+      margin-right: 5px;
+      font-size: 18px;
+    }
+  }
 `;
 
 const PostDescription = styled.p`
   padding: 15px;
+  @media (max-width: 420px) {
+    padding: 10px;
+  }
 `;

@@ -7,7 +7,7 @@ import axios from "axios";
 export default function NewPostPage() {
   useEffect(() => {
     if (localStorage.getItem("user") === null) {
-      navigate("/feed");
+      navigate("/");
     } else {
       setUser(JSON.parse(localStorage.getItem("user")));
     }
@@ -132,5 +132,15 @@ const NewPostContainer = styled.section`
     border: none;
     border-radius: 5px;
     color: grey;
+  }
+  @media (max-width: 420px) {
+    padding-top: 10px;
+    h1{
+      font-size: 20px;
+    }
+    input, textarea, button{
+      width: 93vw;
+      font-size: 15px;
+    }
   }
 `;

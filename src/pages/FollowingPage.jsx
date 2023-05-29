@@ -63,6 +63,13 @@ const FollowingContainer = styled.div`
     margin-bottom: 30px;
     font-weight: 500;
   }
+  @media (max-width: 420px) {
+    h1{
+      font-size: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 const Following = styled.div`
@@ -83,6 +90,16 @@ const Following = styled.div`
   font-weight: 300;
   border-radius: 5px;
   cursor: pointer;
+  @media (max-width: 420px) {
+    column-gap: 5px;
+    padding-left: 10px;
+    width: 93vw;
+    height: 120px;
+    img{
+      height: 75px;
+      width: 75px;
+    }
+  }
 `;
 
 const FollowingData = styled.div`
@@ -97,6 +114,18 @@ const FollowingData = styled.div`
   p:nth-child(2) {
     font-size: 20px;
     margin-bottom: 15px;
+  }
+  @media (max-width: 420px) {
+    margin-left: 10px;
+    p:nth-child(1) {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  p:nth-child(2) {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
   }
 `;
 

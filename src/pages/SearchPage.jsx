@@ -48,7 +48,7 @@ export default function SearchPage() {
         onChange={(e) => handleChange(e)}
       />
       {search.map((u) => (
-        <User onClick={() => navigate(`/perfil/${u.id}`)}>
+        <User key={u.id} onClick={() => navigate(`/perfil/${u.id}`)}>
           <img src={u.userPicture} />
           <UserData>
             <p>{u.name}</p>
@@ -75,6 +75,18 @@ const SearchContainer = styled.div`
     border: none;
     padding-left: 10px;
   }
+  @media (max-width: 420px) {
+    input{
+    width: 93vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    height: 36px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+  }
+  }
 `;
 
 const User = styled.div`
@@ -94,6 +106,15 @@ const User = styled.div`
   font-weight: 300;
   border-radius: 5px;
   cursor: pointer;
+  @media (max-width: 420px) {
+    padding-left: 10px;
+    width: 93vw;
+    height: 120px;
+    img{
+      height: 75px;
+      width: 75px;
+    }
+  }
 `;
 
 const UserData = styled.div`
@@ -109,5 +130,17 @@ const UserData = styled.div`
   p:nth-child(2) {
     font-size: 20px;
     margin-bottom: 15px;
+  }
+  @media (max-width: 420px) {
+    margin-left: 10px;
+    p:nth-child(1) {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  p:nth-child(2) {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
   }
 `;
