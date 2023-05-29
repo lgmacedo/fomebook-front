@@ -36,27 +36,67 @@ export default function HomePage() {
   }
 
   return (
-    <>
-      <p>você segue::!</p>
-      <FollowingContainer>
-      {following.map(f=>(
-            <Following>
-                <img src={f.userPicture}/>
-                <p>{f.name}</p>
-                <p>{f.bio}</p>
-            </Following>
-        ))}
-      </FollowingContainer>
-    </>
+    <FollowingContainer>
+      <h1>Seguindo</h1>
+      {following.map((f) => (
+        <Following onClick={()=>navigate(`/perfil/${f.id}`)}>
+          <img src={f.userPicture} />
+          <FollowingData>
+            <p>{f.name}</p>
+            <p>{f.bio}</p>
+          </FollowingData>
+        </Following>
+      ))}
+    </FollowingContainer>
   );
 }
 
 const FollowingContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 50px);
+  align-items: center;
+  font-family: "Quicksand", sans-serif;
+  h1{
+    color: white;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
 `;
 
 const Following = styled.div`
-
+  display: flex;
+  justify-content: start;
+  padding-left: 25px;
+  align-items: center;
+  background-color: white;
+  height: 175px;
+  width: 50vw;
+  margin-bottom: 25px;
+  column-gap: 25px;
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+  font-weight: 300;
+  border-radius: 5px;
+  cursor: pointer;
 `;
+
+const FollowingData = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p:nth-child(1) {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  p:nth-child(2) {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+`;
+

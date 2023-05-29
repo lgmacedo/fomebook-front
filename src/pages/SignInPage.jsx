@@ -39,7 +39,7 @@ export default function SignInPage() {
   function loginSuccess(res) {
     setUser(res.data);
     localStorage.setItem("user", JSON.stringify(res.data));
-    navigate("/home");
+    navigate("/feed");
   }
 
   function loginFailed(err) {
@@ -48,6 +48,7 @@ export default function SignInPage() {
 
   return (
     <SignInContainer>
+      <h1>fomebook</h1>
       <form onSubmit={login}>
         <input
           required
@@ -76,13 +77,46 @@ export default function SignInPage() {
 const SignInContainer = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  form{
+  padding-top: 100px;
+  h1{
+    font-family: 'Cherry Bomb One', cursive;
+    color: white;
+    font-size: 50px;
     margin-top: 30px;
   }
-  a{
+  form{
+    display: flex;
+    flex-direction: column;
     margin-top: 30px;
-    font-weight: 700;
+  }
+  input{
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    outline-style: none;
+    border: none;
+  }
+  a{
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+  }
+  button{
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    outline-style: none;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: grey;
   }
 `;

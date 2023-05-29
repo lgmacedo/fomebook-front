@@ -52,6 +52,7 @@ export default function NewPostPage() {
 
   return (
     <NewPostContainer>
+      <h1>Novo Post</h1>
       <form onSubmit={post}>
         <input
           required
@@ -61,7 +62,7 @@ export default function NewPostPage() {
           value={form.picture}
           onChange={(e) => handleChange(e)}
         />
-        <input
+        <textarea
           placeholder="Descrição"
           type="text"
           required
@@ -78,13 +79,58 @@ export default function NewPostPage() {
 const NewPostContainer = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  form {
+  padding-top: 100px;
+  h1{
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
     margin-top: 30px;
   }
-  a {
+  form{
+    display: flex;
+    flex-direction: column;
     margin-top: 30px;
-    font-weight: 700;
+  }
+  input{
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    outline-style: none;
+    border: none;
+  }
+  textarea{
+    width: 400px;
+    height: 140px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    outline-style: none;
+    border: none;
+  }
+  a{
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+  }
+  button{
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    outline-style: none;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: grey;
   }
 `;

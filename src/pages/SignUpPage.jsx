@@ -53,15 +53,16 @@ export default function SignUpPage() {
   }
 
   function signUpFailed(err) {
-    if(err.response.status === 409){
+    if (err.response.status === 409) {
       alert("Email já cadastrado.");
-    }else{
+    } else {
       alert(err.response.data);
     }
   }
 
   return (
     <SignUpContainer>
+      <h1>fomebook</h1>
       <form onSubmit={signup}>
         <input
           required
@@ -122,13 +123,46 @@ export default function SignUpPage() {
 const SignUpContainer = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  form{
+  padding-top: 50px;
+  h1 {
+    font-family: "Cherry Bomb One", cursive;
+    color: white;
+    font-size: 50px;
     margin-top: 30px;
   }
-  a{
+  form {
+    display: flex;
+    flex-direction: column;
     margin-top: 30px;
-    font-weight: 700;
+  }
+  input {
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    outline-style: none;
+    border: none;
+  }
+  a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: "Quicksand", sans-serif;
+  }
+  button {
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    outline-style: none;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: grey;
   }
 `;
